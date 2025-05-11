@@ -1,8 +1,10 @@
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import ButtonFavorite from "../components/ButtonFavorite";
 import Header from "../components/Header";
+import ButtonAction from "../components/ButtonAction";
+import ButtonBack from '../components/ButtonBack'
 
 function RecipePage() {
   const { id } = useParams();
@@ -69,32 +71,22 @@ function RecipePage() {
 
   return (
     <div className="bg-gray-100 min-h-screen p-6">
-      <button
-        className="cursor-pointer duration-200 hover:scale-125 active:scale-100 absolute"
-        title="Go Back"
-        onClick={() => navigate(-1)}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="50px"
-          height="50px"
-          viewBox="0 0 24 24"
-          className="stroke-blue-300"
-        >
-          <path
-            strokeLinejoin="round"
-            strokeLinecap="round"
-            strokeWidth="1.5"
-            d="M11 6L5 12M5 12L11 18M5 12H19"
-          ></path>
-        </svg>
-      </button>
       <Header />
+      <ButtonAction
+        onClick={() => navigate(`/favorites`)}
+        label="⭐"
+        className="absolute top-5 right-5"
+        classNameButton="bg-amber-500 hover:shadow-amber-600/50"
+      />
       <div className="p-6 max-w-4xl mx-auto bg-white shadow-md rounded-lg mt-6">
         <div className="flex justify-between">
-          <h1 className="text-3xl font-bold mb-4 font-quicksand">
+          <div className='flex items-center '>
+      <ButtonBack />
+          <h1 className="text-3xl font-bold mb-2 font-quicksand">
             {recipe.strMeal}
           </h1>
+
+          </div>
 
           <ButtonFavorite recipe={recipe} />
         </div>

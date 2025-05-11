@@ -1,11 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
-function SearchBar({ searchInput }) {
+function SearchBar() {
   const [input, setInput] = useState("");
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+
+  useEffect(() => {
+    const initial = params.get("query");
+    if (initial) {
+      setInput(initial);
+    }
+  }, [location.search]);
 
   function handleSubmit(e) {
     e.preventDefault();
-    searchInput(input);
+    if (input.trim() === "") {
+      return;
+    }
+    navigate(`/results?query=${encodeURIComponent(input)}`);
   }
 
   return (

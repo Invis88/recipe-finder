@@ -9,7 +9,8 @@ module.exports = {
         lora: ['Lora', 'serif'],
         quicksand: ['Quicksand', 'sans-serif'],
         pacifico: ['Pacifico', 'cursive'],
-        josefin: ['Josefin Sans', 'sans-serif']
+        josefin: ['Josefin Sans', 'sans-serif'],
+        flowers: ['Send flowers', 'cursive']
       }
     },
   },

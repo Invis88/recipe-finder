@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header({ textSize = "text-8xl" }) {
   return (
     <div>
-      <h1 className="text-7xl font-bold text-center text-blue-600 mb-4 font-dancing underline underline-offset-8 decoration-2 decoration-solid">
-        <Link to='/' className="cursor-pointer inline-block">
+      <h1
+        className={`${textSize} font-bold text-center text-blue-600 mb-4 font-flowers underline underline-offset-8 decoration-4 decoration-solid`}
+      >
+        <Link to="/" className="cursor-pointer inline-block">
           Recipe Finder
         </Link>
       </h1>

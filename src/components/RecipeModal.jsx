@@ -56,12 +56,12 @@ function RecipeModal({ recipe, closeModal }) {
       >
         <button
           onClick={closeModal}
-          className="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-2xl"
+          className="absolute top-2 right-3 text-gray-600 hover:text-red-500 hover:scale-110 ease-in-out transition-all duration-200  text-5xl"
         >
           &times;
         </button>
 
-        <h2 className="text-2xl font-bold mb-2 font-quicksand">
+        <h2 className="text-2xl font-bold mb-2 font-quicksand max-w-[510px]">
           {recipe.strMeal}
         </h2>
         <div className="flex justify-between ">
